@@ -1,0 +1,557 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&family=Great+Vibes&display=swap');
+:root{--n:#0C0A08;--ch:#1A1410;--or:#C8973A;--cr:#F2EDE4;--pi:#A89E94;--pi2:#C8BDB4;--to:#C84A2A;--ob:rgba(200,151,58,.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+#S{height:820px;overflow-y:auto;overflow-x:hidden;border:.5px solid var(--ob);border-radius:6px;scroll-behavior:smooth;font-family:'Lato',Georgia,sans-serif;font-weight:300;background:var(--n);color:var(--cr);}
+#S::-webkit-scrollbar{width:3px;}#S::-webkit-scrollbar-thumb{background:var(--or);}
+nav{position:sticky;top:0;z-index:99;background:rgba(12,10,8,.98);backdrop-filter:blur(18px);border-bottom:.5px solid var(--ob);padding:.82rem 2rem;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Great Vibes',cursive,serif;font-size:1.5rem;color:var(--cr);cursor:pointer;}
+.nlinks{display:flex;gap:1.5rem;align-items:center;}
+.na{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.22em;color:var(--pi);text-transform:uppercase;cursor:pointer;transition:color .3s;}
+.na:hover{color:var(--or);}
+.ncta{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);border:.5px solid var(--or);padding:.4rem 1rem;cursor:pointer;transition:all .3s;}
+.ncta:hover{background:var(--or);color:var(--n);}
+#hero{height:600px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+#hbg{position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="%230C0A08"/></svg>') center/cover;}
+.hov{position:absolute;inset:0;}
+.hc{position:relative;z-index:2;text-align:center;padding:2rem;}
+.hey{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.38em;color:var(--or);text-transform:uppercase;margin-bottom:1.2rem;}
+.htit{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(3.5rem,6vw,5rem);font-weight:300;color:var(--cr);line-height:1;}
+.hscr{font-family:'Great Vibes',cursive,serif;font-size:clamp(2rem,3.5vw,2.9rem);color:var(--or);display:block;margin:.3rem 0 1.6rem;}
+.hrul{width:65px;height:.5px;background:var(--or);margin:0 auto 1.6rem;}
+.hsub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.26em;color:var(--pi2);text-transform:uppercase;margin-bottom:2.3rem;}
+.hctas{display:flex;gap:.9rem;justify-content:center;}
+.bor{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--n);background:var(--or);border:none;padding:.85rem 2rem;cursor:pointer;transition:background .3s,transform .2s;}
+.bor:hover{background:#D4A84A;transform:translateY(-2px);}
+.bgl{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);background:transparent;border:.5px solid var(--or);padding:.85rem 2rem;cursor:pointer;transition:all .3s;}
+.bgl:hover{background:var(--or);color:var(--n);}
+.scind{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;z-index:2;}
+.scl{width:.5px;height:44px;background:linear-gradient(to bottom,var(--or),transparent);animation:sp 2.2s ease-in-out infinite;}
+@keyframes sp{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.22;transform:scaleY(.62)}}
+.sct{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.3em;color:var(--pi2);text-transform:uppercase;}
+.band{overflow:hidden;border-top:.5px solid var(--ob);border-bottom:.5px solid var(--ob);background:var(--ch);padding:1rem 0;white-space:nowrap;}
+.btrk{display:inline-flex;animation:tk 32s linear infinite;}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.bi{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.2em;color:var(--pi2);text-transform:uppercase;padding:0 2rem;display:inline-flex;align-items:center;gap:.7rem;}
+.d{display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--or);}
+.ey{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.35em;color:var(--or);text-transform:uppercase;margin-bottom:.65rem;}
+.st{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:300;color:var(--cr);line-height:1.1;margin-bottom:1.15rem;}
+.gr{width:55px;height:.5px;background:var(--or);margin-bottom:1.3rem;}
+.bt{font-size:.88rem;color:var(--pi2);line-height:2;margin-bottom:1rem;}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.25,.46,.45,.94),transform .9s cubic-bezier(.25,.46,.45,.94);}
+.rv.on{opacity:1;transform:none;}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;}
+.him{position:relative;min-height:460px;overflow:hidden;background:var(--ch);}
+.him img{width:100%;height:100%;object-fit:cover;display:block;}
+.hiov{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,rgba(26,20,16,.9));}
+.htxt{padding:3.8rem 2.8rem;background:var(--ch);display:flex;flex-direction:column;justify-content:center;}
+.hq{border-left:.5px solid var(--or);padding-left:1.4rem;margin:1.5rem 0;}
+.hqt{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.22rem;font-weight:300;font-style:italic;color:var(--cr);line-height:1.55;}
+.hqa{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.2em;color:var(--or);text-transform:uppercase;margin-top:.45rem;display:block;}
+.carte{background:var(--n);padding:4.5rem 0;}
+.ch2{text-align:center;padding:0 2rem 2.5rem;}
+.ch2 .gr{margin:0 auto 1.3rem;}
+.tabs{display:flex;justify-content:center;margin:1.7rem auto 0;border:.5px solid var(--ob);width:fit-content;}
+.tab{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;padding:.62rem 1.4rem;cursor:pointer;color:var(--pi2);border-right:.5px solid var(--ob);border-top:none;border-bottom:none;border-left:none;background:transparent;transition:all .3s;}
+.tab:last-child{border-right:none;}.tab.on{background:var(--or);color:var(--n);}.tab:hover:not(.on){color:var(--or);}
+.mpa{display:none;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ob);}.mpa.on{display:grid;}
+.mc{background:var(--n);overflow:hidden;cursor:pointer;}.mc:hover{background:#100D0B;}
+.miw{height:190px;overflow:hidden;position:relative;background:var(--ch);}
+.miw img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s cubic-bezier(.25,.46,.45,.94);}
+.mc:hover .miw img{transform:scale(1.05);}
+.mbg{position:absolute;top:.78rem;left:.78rem;font-family:'Cinzel',serif;font-size:6.5px;letter-spacing:.18em;text-transform:uppercase;background:var(--or);color:var(--n);padding:.22rem .62rem;z-index:2;}
+.mb{padding:.95rem 1.05rem 1.15rem;}
+.mcat{font-family:'Cinzel',serif;font-size:6.5px;letter-spacing:.22em;color:var(--or);text-transform:uppercase;margin-bottom:.3rem;}
+.mn{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.32rem;font-weight:300;color:var(--cr);line-height:1.12;margin-bottom:.38rem;}
+.md{font-size:.78rem;color:var(--pi2);font-weight:300;line-height:1.65;margin-bottom:.68rem;}
+.mf{display:flex;justify-content:space-between;align-items:center;border-top:.5px solid var(--ob);padding-top:.65rem;}
+.mpr{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;color:var(--or);}
+.mm{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.13em;color:var(--pi);text-transform:uppercase;transition:color .3s;}
+.mc:hover .mm{color:var(--or);}
+.cft{text-align:center;padding:2.5rem 0;background:var(--n);}
+.gsec{background:var(--ch);}
+.gh{text-align:center;padding:4.5rem 2rem 2.5rem;}.gh .gr{margin:0 auto;}
+.gg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:185px;gap:2px;}
+.gi{overflow:hidden;position:relative;cursor:pointer;background:var(--ch);}
+.gi.t{grid-row:span 2;}.gi.w{grid-column:span 2;}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .75s cubic-bezier(.25,.46,.45,.94);}
+.gi:hover img{transform:scale(1.08);}
+.gov{position:absolute;inset:0;background:rgba(12,10,8,.5);opacity:0;transition:opacity .38s;display:flex;align-items:center;justify-content:center;}
+.gi:hover .gov{opacity:1;}
+.gic{width:38px;height:38px;border:.5px solid var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--or);}
+.igb{text-align:center;padding:1.8rem;border-top:.5px solid var(--ob);}
+.igl{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.25em;color:var(--pi2);text-transform:uppercase;margin-bottom:.35rem;}
+.igh{font-family:'Great Vibes',cursive,serif;font-size:1.65rem;color:var(--or);}
+.avsec{background:var(--n);padding:4.5rem 2.5rem;text-align:center;}
+.avsec .gr{margin:0 auto 1.3rem;}
+.rb{font-family:'Cormorant Garamond',Georgia,serif;font-size:4.5rem;font-weight:300;color:var(--or);line-height:1;}
+.rs{color:var(--or);font-size:1.05rem;letter-spacing:.12em;margin:.28rem 0;}
+.rc{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.2em;color:var(--pi2);text-transform:uppercase;margin-bottom:2.2rem;}
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ob);text-align:left;}
+.ac{background:var(--ch);padding:1.5rem;}
+.acst{color:var(--or);font-size:.82rem;letter-spacing:.1em;margin-bottom:.75rem;}
+.act{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.06rem;font-weight:300;font-style:italic;color:var(--cr);line-height:1.65;margin-bottom:.9rem;}
+.acau{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.18em;color:var(--or);text-transform:uppercase;}
+.acda{font-size:10px;color:var(--pi2);margin-top:.2rem;}
+.gbad{display:inline-flex;align-items:center;gap:.55rem;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.15em;color:var(--pi2);text-transform:uppercase;border:.5px solid var(--ob);padding:.52rem 1.3rem;margin-top:1.8rem;cursor:pointer;transition:all .3s;}
+.gbad:hover{border-color:var(--or);color:var(--or);}
+.csec{display:grid;grid-template-columns:1fr 1fr;}
+.cl{padding:4.5rem 2.5rem;background:var(--ch);border-right:.5px solid var(--ob);}
+.hl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.2em;color:var(--or);text-transform:uppercase;margin:1.7rem 0 .8rem;}
+.hr2{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:.5px solid rgba(200,151,58,.1);}
+.hr2:last-of-type{border-bottom:none;}
+.hday{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.14em;color:var(--pi2);text-transform:uppercase;}
+.htime{font-size:.8rem;color:var(--cr);font-weight:300;text-align:right;line-height:1.55;}
+.hnote{font-size:.68rem;color:var(--or);font-style:italic;display:block;}
+.hcl{color:var(--to);font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;}
+.clist{display:flex;flex-direction:column;gap:.9rem;margin:1.8rem 0 2.2rem;}
+.ci{display:flex;align-items:center;gap:.85rem;font-size:.84rem;color:var(--pi2);}
+.cmap{background:var(--n);min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:2rem;text-align:center;}
+foot{display:flex;background:var(--ch);border-top:.5px solid var(--ob);padding:2rem 2.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+.fl{font-family:'Great Vibes',cursive,serif;font-size:1.4rem;color:var(--cr);}
+.ftag{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.18em;color:var(--pi2);text-transform:uppercase;margin-top:.2rem;}
+.flinks{display:flex;gap:1.5rem;}
+.fa{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:.16em;color:var(--pi2);text-transform:uppercase;cursor:pointer;transition:color .3s;}
+.fa:hover{color:var(--or);}
+.fcp{font-size:9.5px;color:var(--pi);}
+</style>
+
+<div id="S">
+<nav>
+  <div class="logo" onclick="go('hero')">Chez Fredo</div>
+  <div class="nlinks">
+    <span class="na" onclick="go('carte')">La Carte</span>
+    <span class="na" onclick="go('hist')">Notre Histoire</span>
+    <span class="na" onclick="go('gal')">Galerie</span>
+    <span class="na" onclick="go('contact')">Contact</span>
+  </div>
+  <span class="ncta">05 59 69 99 99</span>
+</nav>
+
+<div id="hero">
+  <div id="hbg"></div>
+  <div class="hov"></div>
+  <div class="hc" id="hc">
+    <div class="hey">19 Rue Gambetta · Saint-Palais · Pays Basque</div>
+    <div class="htit">Chez Fredo</div>
+    <span class="hscr">La dolce vita à votre table</span>
+    <div class="hrul"></div>
+    <div class="hsub">Pizzeria familiale · Inspiration calabraise · Produits d'exception</div>
+    <div class="hctas">
+      <button class="bor" onclick="go('carte')">Voir la Carte</button>
+      <button class="bgl" onclick="go('hist')">Notre Histoire</button>
+    </div>
+  </div>
+  <div class="scind"><div class="scl"></div><div class="sct">Défiler</div></div>
+</div>
+
+<div class="band">
+  <div class="btrk">
+    <span class="bi"><span class="d"></span>Ouvert du mercredi au samedi</span><span class="bi"><span class="d"></span>Four à bois artisanal</span><span class="bi"><span class="d"></span>Produits italiens d'exception</span><span class="bi"><span class="d"></span>À emporter dès 11h &amp; 18h</span><span class="bi"><span class="d"></span>Fait maison par la Mama</span><span class="bi"><span class="d"></span>4,3 ★ · 188 avis Google</span><span class="bi"><span class="d"></span>Wi-Fi gratuit · Menu végétarien</span>
+    <span class="bi"><span class="d"></span>Ouvert du mercredi au samedi</span><span class="bi"><span class="d"></span>Four à bois artisanal</span><span class="bi"><span class="d"></span>Produits italiens d'exception</span><span class="bi"><span class="d"></span>À emporter dès 11h &amp; 18h</span><span class="bi"><span class="d"></span>Fait maison par la Mama</span><span class="bi"><span class="d"></span>4,3 ★ · 188 avis Google</span><span class="bi"><span class="d"></span>Wi-Fi gratuit · Menu végétarien</span>
+  </div>
+</div>
+
+<div id="hist" class="hgrid rv">
+  <div class="him"><img id="img-hist" src="" alt=""/><div class="hiov"></div></div>
+  <div class="htxt">
+    <div class="ey">Notre famille, notre passion</div>
+    <h2 class="st">Une histoire d'amour<br>avec la cuisine italienne</h2>
+    <div class="gr"></div>
+    <p class="bt">Chez Fredo, c'est avant tout une histoire de famille. Fredo règne sur le four à pizzas avec la précision d'un artisan calabrais. La gérante accueille chaque client en salle avec une chaleur sincère. Et la Mama italienne — le cœur de la maison — concocte des plats d'inspiration calabraise comme à la maison, avec des produits d'exception soigneusement choisis.</p>
+    <blockquote class="hq">
+      <div class="hqt">"Chaque pizza sort du four comme une lettre d'amour adressée à la Calabre."</div>
+      <span class="hqa">— La Mama, en cuisine depuis toujours</span>
+    </blockquote>
+    <p class="bt">Niché au 19 Rue Gambetta à Saint-Palais, notre restaurant vous invite à un voyage sensoriel entre modernité et tradition italienne.</p>
+  </div>
+</div>
+
+<div id="carte" class="carte">
+  <div class="ch2 rv">
+    <div class="ey">Fait maison · Four à bois · Produits d'exception</div>
+    <h2 class="st">La Carte</h2>
+    <div class="gr"></div>
+    <p class="bt" style="max-width:460px;margin:0 auto 0;">Des pizzas nées d'une passion calabraise, des plats mijotés avec amour par la Mama.</p>
+    <div class="tabs">
+      <button class="tab on" onclick="swT('piz',this)">Pizzas</button>
+      <button class="tab" onclick="swT('plat',this)">Plats Maison</button>
+      <button class="tab" onclick="swT('des',this)">Desserts</button>
+    </div>
+  </div>
+  <div id="tp-piz" class="mpa on">
+    <div class="mc"><div class="miw"><img id="img-p1" src="" alt=""/><div class="mbg">Signature</div></div><div class="mb"><div class="mcat">Pizza · Signature de la Mama</div><div class="mn">Calabrese<br>della Mama</div><div class="md">Tomate San Marzano, 'Nduja, burrata, basilic frais, huile d'olive AOP</div><div class="mf"><span class="mpr">17 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-p2" src="" alt=""/></div><div class="mb"><div class="mcat">Pizza · Classique</div><div class="mn">Margherita<br>Fredo</div><div class="md">Fior di latte, tomate San Marzano, basilic — la perfection dans la simplicité</div><div class="mf"><span class="mpr">14 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-p3" src="" alt=""/></div><div class="mb"><div class="mcat">Pizza · Prestige</div><div class="mn">Quattro<br>Formaggi</div><div class="md">Quatre fromages d'Italie, miel de montagne, noix caramélisées</div><div class="mf"><span class="mpr">16 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-p4" src="" alt=""/></div><div class="mb"><div class="mcat">Pizza · Piquante</div><div class="mn">Diavola<br>Piccante</div><div class="md">Salami piccante, tomate, olives noires de Calabre, origan, piment fumé</div><div class="mf"><span class="mpr">15 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-p5" src="" alt=""/><div class="mbg">Prestige</div></div><div class="mb"><div class="mcat">Pizza · Grand Prestige</div><div class="mn">Tartufo<br>Nero</div><div class="md">Crème de truffe noire, champignons des bois, parmesan 24 mois</div><div class="mf"><span class="mpr">19 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-p6" src="" alt=""/></div><div class="mb"><div class="mcat">Pizza · Végétarienne</div><div class="mn">Vegetariana<br>di Stagione</div><div class="md">Légumes grillés, pesto maison, chèvre frais, basilic, huile d'olive</div><div class="mf"><span class="mpr">15 €</span><span class="mm">Découvrir →</span></div></div></div>
+  </div>
+  <div id="tp-plat" class="mpa">
+    <div class="mc"><div class="miw"><img id="img-pl1" src="" alt=""/><div class="mbg">Maison</div></div><div class="mb"><div class="mcat">Pasta · Fait maison</div><div class="mn">Pasta al Ragù<br>della Mama</div><div class="md">Recette originale de la Mama, mijotée 4 heures, pappardelle fraîches maison</div><div class="mf"><span class="mpr">19 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-pl2" src="" alt=""/></div><div class="mb"><div class="mcat">Risotto · Prestige</div><div class="mn">Risotto<br>ai Funghi</div><div class="md">Champignons sauvages, parmesan 24 mois, crème, beurre normand</div><div class="mf"><span class="mpr">18 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-pl3" src="" alt=""/><div class="mbg">Signature</div></div><div class="mb"><div class="mcat">Viande · Spécialité calabraise</div><div class="mn">Osso Buco<br>Calabrese</div><div class="md">Jarret de veau braisé 6h, gremolata citronnée, risotto alla milanese</div><div class="mf"><span class="mpr">24 €</span><span class="mm">Découvrir →</span></div></div></div>
+  </div>
+  <div id="tp-des" class="mpa">
+    <div class="mc"><div class="miw"><img id="img-d1" src="" alt=""/><div class="mbg">Maison</div></div><div class="mb"><div class="mcat">Dessert · Classique</div><div class="mn">Tiramisù<br>della Mama</div><div class="md">Recette originale, mascarpone, café Arabica, cacao Van Houten — 24h repos</div><div class="mf"><span class="mpr">8 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-d2" src="" alt=""/></div><div class="mb"><div class="mcat">Dessert · Léger</div><div class="mn">Panna Cotta<br>aux Fruits Rouges</div><div class="md">Crème vanille de Madagascar, coulis de fruits rouges du Pays Basque</div><div class="mf"><span class="mpr">7 €</span><span class="mm">Découvrir →</span></div></div></div>
+    <div class="mc"><div class="miw"><img id="img-d3" src="" alt=""/></div><div class="mb"><div class="mcat">Dessert · Sicilien</div><div class="mn">Cannoli<br>Siciliani</div><div class="md">Ricotta fraîche, zeste d'orange confite, pépites de chocolat noir 70%</div><div class="mf"><span class="mpr">8 €</span><span class="mm">Découvrir →</span></div></div></div>
+  </div>
+  <div class="cft"><button class="bgl" onclick="go('contact')">Réserver · 05 59 69 99 99</button></div>
+</div>
+
+<div id="gal" class="gsec">
+  <div class="gh rv"><div class="ey">Notre univers en images</div><h2 class="st">La Galerie</h2><div class="gr"></div></div>
+  <div class="gg">
+    <div class="gi t"><img id="img-g1" src="" alt=""/><div class="gov"><div class="gic">+</div></div></div>
+    <div class="gi w"><img id="img-g2" src="" alt=""/><div class="gov"><div class="gic">+</div></div></div>
+    <div class="gi"><img id="img-g3" src="" alt=""/><div class="gov"><div class="gic">+</div></div></div>
+    <div class="gi"><img id="img-g4" src="" alt=""/><div class="gov"><div class="gic">+</div></div></div>
+    <div class="gi"><img id="img-g5" src="" alt=""/><div class="gov"><div class="gic">+</div></div></div>
+  </div>
+  <div class="igb"><div class="igl">Suivez notre quotidien sur Instagram</div><div class="igh">@chezfredo</div></div>
+</div>
+
+<section id="avis" class="avsec rv">
+  <div class="ey">Ce qu'ils disent de nous</div>
+  <h2 class="st">Avis de nos clients</h2>
+  <div class="gr"></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:1.3rem;margin-bottom:2.2rem;">
+    <div class="rb">4,3</div>
+    <div><div class="rs">★★★★☆</div><div class="rc">188 avis · Google Maps · Saint-Palais</div></div>
+  </div>
+  <div class="agrid">
+    <div class="ac"><div class="acst">★★★★★</div><p class="act">"Une découverte exceptionnelle. La pizza Calabrese est à tomber — on sent que c'est fait avec amour et de vrais produits italiens. La Mama est une véritable artiste."</p><div class="acau">Marie-Claire B.</div><div class="acda">Il y a 2 semaines</div></div>
+    <div class="ac"><div class="acst">★★★★★</div><p class="act">"Le meilleur restaurant de Saint-Palais. La Mama cuisine comme en Italie — chaque bouchée est un vrai voyage en Calabre. Service chaleureux et attentionné."</p><div class="acau">Jean-Pierre D.</div><div class="acda">Il y a 1 mois</div></div>
+    <div class="ac"><div class="acst">★★★★★</div><p class="act">"Ambiance chaleureuse, service impeccable, pizzas sublimes. Le four à bois fait toute la différence. Allez-y les yeux fermés, vous ne serez pas déçus !"</p><div class="acau">Sophie &amp; Luc L.</div><div class="acda">Il y a 3 semaines</div></div>
+  </div>
+  <div class="gbad"><span style="color:var(--or);font-weight:700;font-size:.9rem;">G</span>Voir les 188 avis Google</div>
+</section>
+
+<div id="contact" class="csec rv">
+  <div class="cl">
+    <div class="ey">Informations pratiques</div>
+    <h2 class="st" style="font-size:1.9rem;">Nous trouver<br>&amp; nous contacter</h2>
+    <div class="gr"></div>
+    <div class="hl">Horaires d'ouverture</div>
+    <div class="hr2"><span class="hday">Lundi</span><span class="hcl">Fermé</span></div>
+    <div class="hr2"><span class="hday">Mardi</span><span class="hcl">Fermé</span></div>
+    <div class="hr2"><span class="hday">Mercredi</span><span class="htime">12h–14h · 19h–22h<span class="hnote">À emporter dès 11h</span></span></div>
+    <div class="hr2"><span class="hday">Jeudi</span><span class="htime">12h–14h · 19h–22h</span></div>
+    <div class="hr2"><span class="hday">Vendredi</span><span class="htime">11h–14h · 19h–22h<span class="hnote">À emporter dès 11h</span></span></div>
+    <div class="hr2"><span class="hday">Samedi</span><span class="htime">12h–14h · 19h–22h<span class="hnote">À emporter dès 18h</span></span></div>
+    <div class="hr2"><span class="hday">Dimanche</span><span class="htime">19h–22h<span class="hnote">Soir uniquement</span></span></div>
+    <div class="clist">
+      <div class="ci"><span style="color:var(--or);font-size:1rem;">◎</span>19 Rue Gambetta, 64120 Saint-Palais</div>
+      <div class="ci"><span style="color:var(--or);font-size:1rem;">◈</span>05 59 69 99 99</div>
+      <div class="ci"><span style="color:var(--or);font-size:1rem;">◉</span>desboismarguerite@gmail.com</div>
+      <div class="ci"><span style="color:var(--or);font-size:1rem;">◈</span>Wi-Fi gratuit · Menu végétarien</div>
+    </div>
+    <button class="bor">Appeler pour réserver</button>
+  </div>
+  <div class="cmap">
+    <img id="img-map" src="" alt="" style="width:100%;height:100%;min-height:400px;object-fit:cover;display:block;"/>
+  </div>
+</div>
+
+<foot>
+  <div><div class="fl">Chez Fredo</div><div class="ftag">Pizzeria familiale · 19 Rue Gambetta · Saint-Palais · 64120 Pays Basque</div></div>
+  <div class="flinks">
+    <span class="fa" onclick="go('carte')">La Carte</span>
+    <span class="fa" onclick="go('hist')">Notre Histoire</span>
+    <span class="fa" onclick="go('gal')">Galerie</span>
+    <span class="fa" onclick="go('contact')">Contact</span>
+  </div>
+  <div class="fcp">© 2025 Chez Fredo · chezfredo.fr</div>
+</foot>
+</div>
+
+<script>
+const S=document.getElementById('S');
+function go(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+function swT(n,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.querySelectorAll('.mpa').forEach(p=>p.classList.remove('on'));el.classList.add('on');const p=document.getElementById('tp-'+n);if(p){p.classList.add('on');p.querySelectorAll('.mc').forEach((c,i)=>{c.style.opacity='0';c.style.transform='translateY(20px)';setTimeout(()=>{c.style.transition='opacity .5s ease,transform .5s ease';c.style.opacity='1';c.style.transform='none';},i*75);});}}
+
+/* ── SVG GENERATORS ── */
+const E=(s)=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+
+function pizza(cfg){
+  const W=700,H=480,cx=350,cy=240,cr=202,sr=170;
+  const grads=`<defs>
+<radialGradient id="bg"><stop offset="0%" stop-color="${cfg.bg||'#1E1510'}"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient>
+<radialGradient id="ck" cx="48%" cy="42%"><stop offset="0%" stop-color="#ECC472"/><stop offset="55%" stop-color="#C48A2A"/><stop offset="88%" stop-color="#7A4212"/><stop offset="100%" stop-color="#3A1E08"/></radialGradient>
+<radialGradient id="sc" cx="45%" cy="40%"><stop offset="0%" stop-color="${cfg.sauce||'#D04525'}"/><stop offset="100%" stop-color="${cfg.sauce2||'#7A2010'}"/></radialGradient>
+</defs>`;
+  const chars=[[440,72,12,7,45],[540,148,10,6,20],[558,312,11,6,0],[448,418,13,7,-30],[245,418,10,6,0],[148,332,12,7,0],[145,152,11,6,30],[250,76,10,6,-20]].map(([x,y,rx,ry,r])=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#1A0C04" opacity=".7" transform="rotate(${r} ${x} ${y})"/>`).join('');
+  return E(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${grads}
+<rect width="${W}" height="${H}" fill="url(#bg)"/>
+<ellipse cx="${cx}" cy="${cy}" rx="255" ry="248" fill="rgba(200,151,58,.07)"/>
+<circle cx="${cx}" cy="${cy}" r="${cr}" fill="url(#ck)"/>
+${chars}
+<circle cx="${cx}" cy="${cy}" r="${sr}" fill="url(#sc)"/>
+${cfg.cheese||cheese()}
+${cfg.toppings||''}
+${cfg.label?`<text x="${cx}" y="${H-18}" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">${cfg.label}</text>`:''}
+</svg>`);
+}
+
+function cheese(cx=350,cy=240,r=148){
+  const blobs=[[cx-58,cy-48,40,34],[cx+52,cy-38,37,31],[cx-40,cy+52,42,36],[cx+46,cy+48,35,29],[cx+2,cy-2,28,24],[cx-18,cy+18,22,18]];
+  return blobs.map(([x,y,rx,ry])=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#F5EFE0" opacity=".92"/>`).join('');
+}
+function basil(pts){return pts.map(([x,y,r])=>`<ellipse cx="${x}" cy="${y}" rx="16" ry="9" fill="#2E5C1A" opacity=".9" transform="rotate(${r} ${x} ${y})"/>`).join('');}
+function salami(pts){return pts.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="19" fill="#7A2018" opacity=".88"/><circle cx="${x}" cy="${y}" r="14" fill="#9A3025" opacity=".7"/><circle cx="${x+4}" cy="${y-5}" r="3" fill="#B84030" opacity=".5"/>`).join('');}
+function olives(pts){return pts.map(([x,y,r])=>`<ellipse cx="${x}" cy="${y}" rx="10" ry="14" fill="#1A1A0A" opacity=".9" transform="rotate(${r} ${x} ${y})"/><ellipse cx="${x}" cy="${y}" rx="4" ry="5" fill="#3A3A1A" opacity=".6" transform="rotate(${r} ${x} ${y})"/>`).join('');}
+function mushroom(pts){return pts.map(([x,y,w,h,r])=>`<ellipse cx="${x}" cy="${y}" rx="${w}" ry="${h}" fill="#6B4820" opacity=".85" transform="rotate(${r||0} ${x} ${y})"/><ellipse cx="${x}" cy="${y+2}" rx="${w-4}" ry="${h-4}" fill="#8B6030" opacity=".6" transform="rotate(${r||0} ${x} ${y})"/>`).join('');}
+function pepper(pts){return pts.map(([x,y,c,r])=>`<ellipse cx="${x}" cy="${y}" rx="18" ry="9" fill="${c}" opacity=".85" transform="rotate(${r} ${x} ${y})"/>`).join('');}
+
+const IMGS={
+  'img-p1':pizza({bg:'#1A0E0A',sauce:'#C84020',sauce2:'#6A1808',toppings:
+    cheese()+`<ellipse cx="350" cy="240" rx="30" ry="26" fill="#F8F5EC" opacity=".95"/>
+    <ellipse cx="350" cy="240" rx="20" ry="17" fill="#FEFEFE" opacity=".88"/>
+    `+basil([[275,235,-25],[392,318,20],[432,192,-45],[305,332,35]])+
+    `<circle cx="298" cy="188" r="9" fill="#9A2018" opacity=".8"/>
+    <circle cx="410" cy="272" r="10" fill="#8A1A10" opacity=".85"/>
+    <circle cx="375" cy="195" r="8" fill="#B22820" opacity=".75"/>
+    <circle cx="302" cy="298" r="9" fill="#9A2018" opacity=".82"/>`,label:'CALABRESE · SIGNATURE'}),
+
+  'img-p2':pizza({bg:'#180E0A',sauce:'#CC3E22',sauce2:'#6A1808',toppings:
+    `<ellipse cx="292" cy="198" rx="44" ry="38" fill="#F5EFE0" opacity=".93"/>
+    <ellipse cx="408" cy="212" rx="40" ry="34" fill="#F0E8D5" opacity=".9"/>
+    <ellipse cx="325" cy="302" rx="45" ry="39" fill="#F5EFE0" opacity=".93"/>
+    <ellipse cx="418" cy="295" rx="37" ry="31" fill="#F0E8D5" opacity=".88"/>
+    <ellipse cx="355" cy="248" rx="30" ry="26" fill="#FAFAF0" opacity=".9"/>
+    `+basil([[270,238,-28],[395,322,22],[428,188,-42],[308,335,38],[352,165,-15]]),label:'MARGHERITA · CLASSIQUE'}),
+
+  'img-p3':pizza({bg:'#181210',sauce:'#B83820',sauce2:'#5A1408',toppings:
+    `<ellipse cx="305" cy="200" rx="45" ry="38" fill="#EFE5C0" opacity=".92"/>
+    <ellipse cx="400" cy="215" rx="42" ry="36" fill="#E8DDB5" opacity=".9"/>
+    <ellipse cx="318" cy="305" rx="46" ry="40" fill="#EFE5C0" opacity=".92"/>
+    <ellipse cx="412" cy="292" rx="38" ry="33" fill="#F0E5C5" opacity=".88"/>
+    <ellipse cx="358" cy="250" rx="32" ry="28" fill="#F5EDD5" opacity=".9"/>
+    <ellipse cx="282" cy="268" rx="18" ry="14" fill="#C8A844" opacity=".65"/>
+    <ellipse cx="425" cy="255" rx="15" ry="11" fill="#8A7A3C" opacity=".5"/>
+    <ellipse cx="350" cy="175" rx="14" ry="10" fill="#6A5A2C" opacity=".6"/>
+    <circle cx="370" cy="315" r="7" fill="#5A4820" opacity=".7"/>`,label:'QUATTRO FORMAGGI · PRESTIGE'}),
+
+  'img-p4':pizza({bg:'#160A08',sauce:'#C83020',sauce2:'#680808',toppings:
+    `<ellipse cx="305" cy="205" rx="38" ry="33" fill="#F0EAD8" opacity=".85"/>
+    <ellipse cx="418" cy="225" rx="35" ry="30" fill="#EAE2CC" opacity=".82"/>
+    <ellipse cx="338" cy="305" rx="36" ry="31" fill="#F0EAD8" opacity=".85"/>
+    `+salami([[295,188],[418,205],[375,305],[305,288],[352,175],[435,285]])+
+    olives([[268,248,15],[410,178,35],[445,318,-25],[315,338,50],[245,310,5]]),label:'DIAVOLA · PICCANTE'}),
+
+  'img-p5':pizza({bg:'#140F0A',sauce:'#8A3A18',sauce2:'#4A1C08',toppings:
+    `<ellipse cx="298" cy="202" rx="42" ry="36" fill="#EEE8D8" opacity=".88"/>
+    <ellipse cx="408" cy="220" rx="38" ry="32" fill="#E8E2CC" opacity=".85"/>
+    <ellipse cx="325" cy="302" rx="40" ry="34" fill="#EEE8D8" opacity=".88"/>
+    <ellipse cx="418" cy="290" rx="34" ry="29" fill="#E8E2CC" opacity=".82"/>
+    `+mushroom([[280,245,22,14,20],[400,180,20,13,35],[420,295,21,13,-15],[295,315,18,12,25],[350,175,19,12,-30],[435,248,17,11,10]])+
+    `<line x1="262" y1="295" x2="295" y2="215" stroke="#2A1A08" stroke-width="2" opacity=".5"/>
+    <line x1="380" y1="165" x2="420" y2="240" stroke="#2A1A08" stroke-width="1.5" opacity=".45"/>
+    <line x1="415" y1="340" x2="390" y2="255" stroke="#2A1A08" stroke-width="1.5" opacity=".4"/>`,label:'TARTUFO NERO · PRESTIGE'}),
+
+  'img-p6':pizza({bg:'#101810',sauce:'#B84A20',sauce2:'#5A2208',toppings:
+    `<ellipse cx="305" cy="205" rx="36" ry="31" fill="#EEE8D8" opacity=".82"/>
+    <ellipse cx="415" cy="220" rx="33" ry="28" fill="#E8E2CC" opacity=".8"/>
+    <ellipse cx="340" cy="305" rx="35" ry="30" fill="#EEE8D8" opacity=".82"/>
+    `+pepper([[268,245,'#B83020',20],[395,185,'#D4A020',-35],[438,295,'#2E6818',15],[295,168,'#C83822',40],[422,165,'#D4A020',-20],[265,310,'#2E6818',-10],[405,330,'#B83020',30]])+
+    `<circle cx="350" cy="248" r="14" fill="#F5EFE0" opacity=".85"/>
+    `+basil([[365,285,25],[282,222,-15]]),label:'VEGETARIANA · STAGIONE'}),
+
+  'img-pl1':E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<defs><radialGradient id="b"><stop offset="0%" stop-color="#201410"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient>
+<radialGradient id="pl" cx="50%" cy="45%"><stop offset="0%" stop-color="#E8E0C8"/><stop offset="100%" stop-color="#B89858"/></radialGradient></defs>
+<rect width="700" height="480" fill="url(#b)"/>
+<ellipse cx="350" cy="240" rx="220" ry="210" fill="rgba(200,151,58,.07)"/>
+<ellipse cx="350" cy="260" rx="180" ry="155" fill="#2A1A0C" opacity=".9"/>
+<ellipse cx="350" cy="255" rx="168" ry="143" fill="#3A2214"/>
+<path d="M215 240 Q255 195 295 240 Q335 285 375 240 Q415 195 455 240 Q480 265 490 240" stroke="#C8973A" stroke-width="3" fill="none" opacity=".7"/>
+<path d="M225 265 Q265 220 305 265 Q345 310 385 265 Q425 220 465 265" stroke="#D4A840" stroke-width="2.5" fill="none" opacity=".6"/>
+<path d="M230 288 Q270 245 310 288 Q350 330 390 288 Q430 245 468 288" stroke="#B87830" stroke-width="2" fill="none" opacity=".5"/>
+<ellipse cx="350" cy="220" rx="60" ry="35" fill="#9A2818" opacity=".7"/>
+<ellipse cx="350" cy="218" rx="50" ry="28" fill="#B83020" opacity=".6"/>
+<circle cx="330" cy="215" r="5" fill="#D84030" opacity=".5"/>
+<circle cx="360" cy="208" r="4" fill="#C83028" opacity=".5"/>
+<text x="350" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">PASTA AL RAGÙ · MAISON</text>
+</svg>`),
+
+  'img-pl2':E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<defs><radialGradient id="b"><stop offset="0%" stop-color="#181410"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs>
+<rect width="700" height="480" fill="url(#b)"/>
+<ellipse cx="350" cy="240" rx="220" ry="210" fill="rgba(200,151,58,.07)"/>
+<ellipse cx="350" cy="265" rx="175" ry="155" fill="#2C1E10" opacity=".95"/>
+<ellipse cx="350" cy="258" rx="163" ry="143" fill="#382410"/>
+<ellipse cx="350" cy="250" rx="148" ry="130" fill="#4A3018"/>
+<circle cx="290" cy="230" r="22" fill="#6B4820" opacity=".85"/>
+<circle cx="350" cy="215" r="25" fill="#5A3C18" opacity=".88"/>
+<circle cx="415" cy="228" r="20" fill="#6B4820" opacity=".82"/>
+<circle cx="320" cy="270" r="18" fill="#7A5528" opacity=".78"/>
+<circle cx="390" cy="268" r="21" fill="#6B4820" opacity=".85"/>
+<ellipse cx="350" cy="240" rx="75" ry="55" fill="#E8DDB5" opacity=".82"/>
+<ellipse cx="350" cy="235" rx="62" ry="44" fill="#F0E8C5" opacity=".75"/>
+<circle cx="332" cy="228" r="8" fill="#C8973A" opacity=".55"/>
+<circle cx="368" cy="232" r="6" fill="#D4A040" opacity=".48"/>
+<text x="350" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">RISOTTO AI FUNGHI · PRESTIGE</text>
+</svg>`),
+
+  'img-pl3':E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<defs><radialGradient id="b"><stop offset="0%" stop-color="#1A1008"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs>
+<rect width="700" height="480" fill="url(#b)"/>
+<ellipse cx="350" cy="240" rx="210" ry="200" fill="rgba(200,151,58,.07)"/>
+<ellipse cx="350" cy="255" rx="175" ry="145" fill="#3A2410" opacity=".95"/>
+<ellipse cx="320" cy="248" rx="82" ry="68" fill="#5A3218" opacity=".9"/>
+<ellipse cx="318" cy="244" rx="76" ry="62" fill="#7A4A28" opacity=".85"/>
+<ellipse cx="315" cy="240" rx="68" ry="55" fill="#8B5830" opacity=".8"/>
+<ellipse cx="350" cy="258" rx="55" ry="40" fill="#C8A870" opacity=".75"/>
+<ellipse cx="350" cy="252" rx="44" ry="32" fill="#E0C890" opacity=".65"/>
+<path d="M200 260 Q215 220 230 240 Q245 260 260 235" stroke="#C8973A" stroke-width="1.5" fill="none" opacity=".3"/>
+<path d="M215 268 Q230 235 245 255" stroke="#D4A840" stroke-width="1" fill="none" opacity=".25"/>
+<text x="350" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">OSSO BUCO CALABRESE</text>
+</svg>`),
+
+  'img-d1':E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<defs><radialGradient id="b"><stop offset="0%" stop-color="#1C1410"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs>
+<rect width="700" height="480" fill="url(#b)"/>
+<ellipse cx="350" cy="240" rx="210" ry="200" fill="rgba(200,151,58,.06)"/>
+<rect x="200" y="160" width="300" height="195" rx="8" fill="#2A1A0C" opacity=".95"/>
+<rect x="200" y="160" width="300" height="65" rx="8" fill="#1A100A"/>
+<rect x="200" y="220" width="300" height="8" fill="#E8DDB8" opacity=".85"/>
+<rect x="200" y="225" width="300" height="55" fill="#F0E8C0" opacity=".82"/>
+<rect x="200" y="277" width="300" height="8" fill="#E8DDB8" opacity=".85"/>
+<rect x="200" y="282" width="300" height="55" fill="#F0E8C0" opacity=".8"/>
+<rect x="200" y="334" width="300" height="8" fill="#E8DDB8" opacity=".82"/>
+<rect x="200" y="342" width="300" height="13" fill="#2A1808" opacity=".9"/>
+<circle cx="248" cy="182" r="4" fill="#C8973A" opacity=".5"/>
+<circle cx="262" cy="176" r="3" fill="#C8973A" opacity=".4"/>
+<circle cx="238" cy="174" r="2.5" fill="#C8973A" opacity=".35"/>
+<circle cx="452" cy="180" r="4" fill="#C8973A" opacity=".5"/>
+<circle cx="440" cy="174" r="3" fill="#C8973A" opacity=".4"/>
+<text x="350" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">TIRAMISÙ DELLA MAMA</text>
+</svg>`),
+
+  'img-d2':E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<defs><radialGradient id="b"><stop offset="0%" stop-color="#181410"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs>
+<rect width="700" height="480" fill="url(#b)"/>
+<ellipse cx="350" cy="240" rx="200" ry="195" fill="rgba(200,151,58,.06)"/>
+<ellipse cx="350" cy="290" rx="145" ry="30" fill="#1A1008" opacity=".7"/>
+<rect x="262" y="155" width="176" height="225" rx="88" fill="#F0E8D8" opacity=".93"/>
+<rect x="268" y="155" width="164" height="215" rx="82" fill="#F5EFF0" opacity=".88"/>
+<ellipse cx="350" cy="168" rx="82" ry="20" fill="#E8E0D0" opacity=".9"/>
+<ellipse cx="350" cy="175" rx="55" ry="40" fill="#C84035" opacity=".75"/>
+<ellipse cx="350" cy="178" rx="45" ry="33" fill="#D84845" opacity=".65"/>
+<circle cx="315" cy="172" r="6" fill="#C83030" opacity=".7"/>
+<circle cx="380" cy="168" r="5" fill="#B82828" opacity=".65"/>
+<circle cx="348" cy="160" r="4" fill="#C83030" opacity=".6"/>
+<text x="350" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">PANNA COTTA · FRUITS ROUGES</text>
+</svg>`),
+
+  'img-d3':E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<defs><radialGradient id="b"><stop offset="0%" stop-color="#181210"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs>
+<rect width="700" height="480" fill="url(#b)"/>
+<ellipse cx="350" cy="240" rx="200" ry="195" fill="rgba(200,151,58,.06)"/>
+<rect x="215" y="195" width="270" height="120" rx="20" fill="#E8D8B0" opacity=".92"/>
+<rect x="222" y="202" width="256" height="106" rx="16" fill="#F5ECC8" opacity=".88"/>
+<rect x="222" y="202" width="256" height="35" rx="16" fill="#F8F0D8" opacity=".95"/>
+<rect x="222" y="230" width="256" height="12" fill="#C8973A" opacity=".3"/>
+<ellipse cx="350" cy="205" rx="95" ry="18" fill="#F8F2E0" opacity=".9"/>
+<circle cx="290" cy="222" r="10" fill="#2A180C" opacity=".75"/>
+<circle cx="325" cy="215" r="8" fill="#3A2010" opacity=".65"/>
+<circle cx="360" cy="220" r="9" fill="#2A180C" opacity=".7"/>
+<circle cx="395" cy="214" r="7" fill="#3A2010" opacity=".6"/>
+<circle cx="418" cy="222" r="8" fill="#2A180C" opacity=".65"/>
+<text x="350" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C8973A" opacity=".5" letter-spacing="3">CANNOLI SICILIANI</text>
+</svg>`),
+};
+
+// Galerie & histoire & hero
+const heroSVG=E(`<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="900"><defs>
+<radialGradient id="b" cx="50%" cy="45%"><stop offset="0%" stop-color="#2A1A0E"/><stop offset="65%" stop-color="#140E08"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient>
+<radialGradient id="g1" cx="30%" cy="40%"><stop offset="0%" stop-color="#C8973A" stop-opacity=".18"/><stop offset="100%" stop-color="#C8973A" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx="75%" cy="60%"><stop offset="0%" stop-color="#8B3018" stop-opacity=".12"/><stop offset="100%" stop-color="#8B3018" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1800" height="900" fill="url(#b)"/>
+<rect width="1800" height="900" fill="url(#g1)"/>
+<rect width="1800" height="900" fill="url(#g2)"/>
+<line x1="0" y1="450" x2="1800" y2="450" stroke="#C8973A" stroke-width=".5" opacity=".08"/>
+<line x1="900" y1="0" x2="900" y2="900" stroke="#C8973A" stroke-width=".5" opacity=".08"/>
+<circle cx="540" cy="450" r="320" fill="none" stroke="#C8973A" stroke-width=".5" opacity=".06"/>
+<circle cx="1260" cy="450" r="280" fill="none" stroke="#C8973A" stroke-width=".5" opacity=".05"/>
+</svg>`);
+
+const histSVG=E(`<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700"><defs>
+<radialGradient id="b" cx="45%" cy="42%"><stop offset="0%" stop-color="#2E1A0C"/><stop offset="100%" stop-color="#100808"/></radialGradient>
+<radialGradient id="g" cx="50%" cy="45%" r="50%"><stop offset="0%" stop-color="#C8973A" stop-opacity=".2"/><stop offset="100%" stop-color="#C8973A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="900" height="700" fill="url(#b)"/>
+<rect width="900" height="700" fill="url(#g)"/>
+${pizza({bg:'#2A180A',sauce:'#C84020',sauce2:'#680C08',toppings:cheese()+basil([[275,235,-25],[392,318,20],[432,192,-45]]),label:''}).replace('data:image/svg+xml;charset=utf-8,','').split('<svg')[1]?'':''}
+<text x="450" y="580" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#C8973A" opacity=".15" letter-spacing="8">CHEZ FREDO</text>
+<circle cx="450" cy="350" r="250" fill="none" stroke="#C8973A" stroke-width=".5" opacity=".15"/>
+<circle cx="450" cy="350" r="200" fill="none" stroke="#C8973A" stroke-width=".5" opacity=".1"/>
+</svg>`);
+
+// Pizza SVG for histoire (embedded directly)
+const histFull=E(`<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700">
+<defs>
+<radialGradient id="hb" cx="42%" cy="45%"><stop offset="0%" stop-color="#2A180C"/><stop offset="100%" stop-color="#0E0808"/></radialGradient>
+<radialGradient id="hg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#C8973A" stop-opacity=".15"/><stop offset="100%" stop-color="#C8973A" stop-opacity="0"/></radialGradient>
+<radialGradient id="hk" cx="48%" cy="42%"><stop offset="0%" stop-color="#ECC472"/><stop offset="55%" stop-color="#C48A2A"/><stop offset="88%" stop-color="#7A4212"/><stop offset="100%" stop-color="#3A1E08"/></radialGradient>
+<radialGradient id="hs" cx="45%" cy="40%"><stop offset="0%" stop-color="#D04525"/><stop offset="100%" stop-color="#7A2010"/></radialGradient>
+</defs>
+<rect width="900" height="700" fill="url(#hb)"/>
+<rect width="900" height="700" fill="url(#hg)"/>
+<circle cx="310" cy="350" r="268" fill="url(#hk)" opacity=".95"/>
+<ellipse cx="248" cy="132" rx="14" ry="8" fill="#1A0C04" opacity=".65" transform="rotate(45 248 132)"/>
+<ellipse cx="540" cy="198" rx="12" ry="7" fill="#1A0C04" opacity=".55" transform="rotate(20 540 198)"/>
+<ellipse cx="558" cy="418" rx="13" ry="7" fill="#1A0C04" opacity=".6"/>
+<ellipse cx="415" cy="585" rx="14" ry="8" fill="#1A0C04" opacity=".52" transform="rotate(-30 415 585)"/>
+<ellipse cx="132" cy="480" rx="12" ry="7" fill="#1A0C04" opacity=".55"/>
+<ellipse cx="96" cy="230" rx="13" ry="7" fill="#1A0C04" opacity=".6" transform="rotate(30 96 230)"/>
+<circle cx="310" cy="350" r="228" fill="url(#hs)"/>
+<ellipse cx="258" cy="298" rx="44" ry="38" fill="#F5EFE0" opacity=".92"/>
+<ellipse cx="368" cy="312" rx="40" ry="34" fill="#F0E8D5" opacity=".9"/>
+<ellipse cx="278" cy="402" rx="44" ry="38" fill="#F5EFE0" opacity=".92"/>
+<ellipse cx="370" cy="398" rx="36" ry="31" fill="#F0E8D5" opacity=".88"/>
+<ellipse cx="315" cy="348" rx="28" ry="24" fill="#FAFAF0" opacity=".9"/>
+<ellipse cx="230" cy="338" rx="16" ry="9" fill="#2E5C1A" opacity=".9" transform="rotate(-25 230 338)"/>
+<ellipse cx="345" cy="425" rx="15" ry="8" fill="#3A7022" opacity=".9" transform="rotate(20 345 425)"/>
+<ellipse cx="390" cy="283" rx="13" ry="7" fill="#2E5C1A" opacity=".85" transform="rotate(-45 390 283)"/>
+<circle cx="250" cy="278" r="9" fill="#9A2018" opacity=".78"/>
+<circle cx="368" cy="385" r="10" fill="#8A1A10" opacity=".82"/>
+<circle cx="352" cy="275" r="8" fill="#B22820" opacity=".72"/>
+<text x="640" y="620" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#C8973A" opacity=".2" letter-spacing="4">LA DOLCE VITA</text>
+<circle cx="700" cy="200" r="120" fill="none" stroke="#C8973A" stroke-width=".5" opacity=".12"/>
+</svg>`);
+
+const galSVGs=[
+  E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="820" viewBox="0 0 700 820"><defs><radialGradient id="b"><stop offset="0%" stop-color="#1C1208"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs><rect width="700" height="820" fill="url(#b)"/><ellipse cx="350" cy="410" rx="260" ry="260" fill="rgba(200,151,58,.08)"/><rect x="225" y="155" width="250" height="40" rx="4" fill="#2A1A0C" opacity=".9"/><rect x="240" y="190" width="220" height="430" rx="3" fill="#1E1208" opacity=".9"/><rect x="240" y="190" width="220" height="12" rx="3" fill="#C8973A" opacity=".25"/><circle cx="350" cy="140" r="22" fill="#3A2010"/><circle cx="350" cy="140" r="14" fill="#2A1608"/><line x1="350" y1="118" x2="350" y2="102" stroke="#C8973A" stroke-width="2" opacity=".5"/><ellipse cx="350" cy="420" rx="60" ry="160" fill="#C8973A" opacity=".08"/><text x="350" y="760" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#C8973A" opacity=".35" letter-spacing="4">IL PIZZAIOLO</text></svg>`),
+  pizza({bg:'#140E0A',sauce:'#C84020',sauce2:'#6A1808',toppings:cheese()+basil([[275,235,-25],[392,318,20],[432,192,-45],[308,330,35]]),label:'CHEZ FREDO · SAINT-PALAIS'}),
+  E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="410" viewBox="0 0 700 410"><defs><radialGradient id="b" cx="45%" cy="40%"><stop offset="0%" stop-color="#241810"/><stop offset="100%" stop-color="#0C0A08"/></radialGradient></defs><rect width="700" height="410" fill="url(#b)"/><ellipse cx="350" cy="205" rx="230" ry="185" fill="rgba(200,151,58,.07)"/><rect x="80" y="85" width="540" height="240" rx="6" fill="#1A1008" opacity=".95"/><rect x="80" y="85" width="540" height="4" fill="#C8973A" opacity=".3"/><rect x="98" y="105" width="150" height="200" rx="3" fill="#241810"/><rect x="270" y="105" width="150" height="200" rx="3" fill="#241810"/><rect x="442" y="105" width="150" height="200" rx="3" fill="#241810"/><text x="350" y="378" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#C8973A" opacity=".4" letter-spacing="4">NOTRE SALLE · SAINT-PALAIS</text></svg>`),
+  pizza({bg:'#160E08',sauce:'#B83020',sauce2:'#5A0808',toppings:cheese()+salami([[298,192],[420,210],[378,308],[308,290],[352,178],[438,288]]),label:'DIAVOLA · PICCANTE'}),
+  E(`<svg xmlns="http://www.w3.org/2000/svg" width="700" height="410" viewBox="0 0 700 410"><defs><radialGradient id="b" cx="30%" cy="45%"><stop offset="0%" stop-color="#221408"/><stop offset="100%" stop-color="#0C0808"/></radialGradient></defs><rect width="700" height="410" fill="url(#b)"/><ellipse cx="200" cy="205" rx="170" ry="170" fill="rgba(200,151,58,.12)"/><ellipse cx="200" cy="240" rx="140" ry="115" fill="#1A0E08" opacity=".9"/><ellipse cx="200" cy="220" rx="110" ry="88" fill="#2A1A0E" opacity=".85"/><ellipse cx="200" cy="210" rx="80" ry="65" fill="#C8973A" opacity=".15"/><path d="M100 280 Q120 220 145 260 Q165 295 185 245 Q205 198 228 248 Q248 292 270 245 Q290 202 310 252" stroke="#C8973A" stroke-width="2" fill="none" opacity=".4"/><text x="500" y="200" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#C8973A" opacity=".4" letter-spacing="3">NOTRE FOUR</text><text x="500" y="224" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#A08070" opacity=".5" letter-spacing="2">À BOIS</text></svg>`),
+];
+
+document.getElementById('hbg').style.cssText=`position:absolute;inset:0;background-image:url('${heroSVG}');background-size:cover;background-position:center;`;
+document.getElementById('img-hist').src=histFull;
+Object.entries(IMGS).forEach(([id,src])=>{const el=document.getElementById(id);if(el)el.src=src;});
+galSVGs.forEach((s,i)=>{const el=document.getElementById('img-g'+(i+1));if(el)el.src=s;});
+
+// Hero entrance
+const hc=document.getElementById('hc');
+hc.querySelectorAll('.hey,.htit,.hscr,.hrul,.hsub,.hctas').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(22px)';});
+document.querySelector('.scind').style.opacity='0';
+setTimeout(()=>{
+  hc.querySelectorAll('.hey,.htit,.hscr,.hrul,.hsub,.hctas').forEach((el,i)=>{
+    setTimeout(()=>{el.style.transition='opacity .85s ease,transform .85s ease';el.style.opacity='1';el.style.transform='none';},320+i*160);
+  });
+  setTimeout(()=>{const si=document.querySelector('.scind');si.style.transition='opacity 1s ease';si.style.opacity='1';},1400);
+},250);
+
+// Parallax
+S.addEventListener('scroll',()=>{document.getElementById('hbg').style.transform='translateY('+S.scrollTop*.2+'px)';},{passive:true});
+
+// Scroll reveals
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}});},{root:S,threshold:0.07});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
