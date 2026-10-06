@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chez Fredo | Pizzeria italienne · Saint-Palais</title>
+<meta name="description" content="Chez Fredo, pizzeria italienne au 19 Rue Gambetta à Saint-Palais (64120). Pizzas 31 cm, pâtes, sur place ou à emporter. Tél. 05 59 69 99 99">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://chezfredopizza.com">
+<meta property="og:title" content="Chez Fredo | La dolce vita à votre table">
+<meta property="og:description" content="Pizzeria italienne à Saint-Palais. Pizzas à emporter dès midi et le soir dès 18h.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chezfredopizza.com">
+<meta property="og:image" content="https://chezfredopizza.com/assets/images/flyer-recto.webp">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#000000">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Chez Fredo","url":"https://chezfredopizza.com","telephone":"+33559699999","servesCuisine":["Italian","Pizza"],"priceRange":"€€","hasMenu":"https://chezfredopizza.com/#carte",
+"address":{"@type":"PostalAddress","streetAddress":"19 Rue Gambetta","addressLocality":"Saint-Palais","postalCode":"64120","addressCountry":"FR"},
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"14:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"19:00","closes":"21:30"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"188"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bk:#000;--bk2:#0a0a0a;--bk3:#121212;
+  --wh:#fff;--tx:#e9e6e1;--mu:#9a958e;
+  --rd:#d3202a;--rd2:#a8161e;
+  --gr:#0f8f46;
+  --line:rgba(255,255,255,.08);
+  --disp:'Lilita One','Arial Black',sans-serif;
+  --body:'Poppins',system-ui,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bk);color:var(--tx);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.disp{font-family:var(--disp);font-weight:400;letter-spacing:.01em;line-height:1;text-transform:uppercase}
+
+/* tricolore */
+.tri{display:flex;width:220px;height:4px;margin:0 auto}
+.tri i{flex:1}.tri i:nth-child(1){background:var(--gr)}.tri i:nth-child(2){background:#fff}.tri i:nth-child(3){background:var(--rd)}
+.tri.sm{width:120px;height:3px}
+
+/* pill flyer */
+.pill{display:inline-flex;align-items:center;justify-content:center;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;color:#fff;border:3px solid var(--rd);border-radius:999px;padding:.55em 1.8em;font-size:1.15rem;line-height:1;background:transparent}
+.pill-row{display:flex;align-items:center;gap:1.4rem}
+.pill-row::before,.pill-row::after{content:'';flex:1;height:3px;background:var(--rd)}
+.pill-row.thin::before,.pill-row.thin::after{height:2px}
+.pill-row.thin .pill{border-width:2px;font-size:1rem;padding:.5em 1.4em}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:1rem;padding:1rem 2rem;border-radius:999px;transition:transform .25s,background .25s,color .25s,box-shadow .25s}
+.btn-rd{background:var(--rd);color:#fff;box-shadow:0 10px 30px rgba(211,32,42,.35)}
+.btn-rd:hover{background:var(--rd2);transform:translateY(-2px)}
+.btn-ln{border:2px solid #fff;color:#fff}
+.btn-ln:hover{background:#fff;color:#000;transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+
+/* déco flyer */
+.deco{position:absolute;pointer-events:none;user-select:none}
+
+/* NAV */
+#nav{position:fixed;inset:0 0 auto;z-index:100;transition:background .35s,border-color .35s,padding .35s;border-bottom:1px solid transparent;padding:18px 0}
+#nav.solid{background:rgba(0,0,0,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line);padding:10px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{font-family:var(--disp);font-size:1.6rem;color:#fff;text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:.6rem}
+.brand img{width:40px;height:40px;object-fit:contain}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-weight:500;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;color:#cfcac3;position:relative;padding:.3rem 0;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--rd);transition:width .3s}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+.nav-call{font-family:var(--disp);font-size:1rem;letter-spacing:.04em;border:2px solid var(--rd);border-radius:999px;padding:.5rem 1.2rem;color:#fff;transition:background .25s}
+.nav-call:hover{background:var(--rd)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;position:relative}
+.burger span{position:absolute;left:8px;right:8px;height:2px;background:#fff;transition:transform .3s,opacity .3s}
+.burger span:nth-child(1){top:13px}.burger span:nth-child(2){top:19px}.burger span:nth-child(3){top:25px}
+body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:120px 0 80px;background:radial-gradient(ellipse at 50% 45%,#1a1a1a 0%,#000 62%)}
+#hero .d-tom{top:-10px;right:-30px;width:min(440px,38vw)}
+#hero .d-bas{top:40px;left:0;width:min(210px,17vw)}
+#hero .d-piz{bottom:-10px;right:-10px;width:min(400px,32vw)}
+#hero .d-bas2{bottom:-10px;left:0;width:min(250px,20vw)}
+.hero-c{position:relative;z-index:2;max-width:780px;padding:0 24px}
+.h-title{font-size:clamp(3.4rem,8.5vw,6.4rem);color:#fff;text-shadow:0 6px 0 rgba(0,0,0,.4)}
+.h-tag{font-family:var(--disp);text-transform:uppercase;color:var(--rd);font-size:clamp(1.05rem,2.4vw,1.6rem);letter-spacing:.04em;margin:.6rem 0 1.6rem}
+.h-logo{width:clamp(170px,19vw,250px);margin:1.4rem auto 1.2rem;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.h-info{font-family:var(--disp);font-size:1.15rem;color:#fff;letter-spacing:.02em;margin:1.4rem 0 .4rem;display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap}
+.h-info .dot{color:var(--rd)}
+.h-addr{font-family:var(--disp);font-size:1.1rem;color:#fff;opacity:.9}
+.h-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem}
+.hero .pill-row{max-width:620px;margin:0 auto}
+
+/* BANDEAU */
+.band{background:var(--rd);overflow:hidden;white-space:nowrap;padding:.9rem 0;border-top:3px solid #000;border-bottom:3px solid #000}
+.band-track{display:inline-flex;animation:tk 38s linear infinite}
+.band span{font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:1.05rem;letter-spacing:.05em;padding:0 1.6rem;display:inline-flex;align-items:center;gap:1.6rem}
+.band span::after{content:'★';font-size:.8rem;opacity:.7}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{text-align:center;margin-bottom:3.2rem}
+.eyebrow{font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;color:var(--rd);font-size:1rem;margin-bottom:.5rem}
+.sec-title{font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1;margin-bottom:1.1rem}
+.sec-sub{font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:1.5rem;margin-top:1.1rem;letter-spacing:.03em}
+.lead{color:var(--mu);max-width:560px;margin:1.2rem auto 0;font-size:1rem}
+
+/* À EMPORTER */
+.take{background:var(--bk2);border-bottom:1px solid var(--line)}
+.take-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tcard{background:var(--bk);border:1px solid var(--line);border-radius:22px;padding:2.2rem 2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.tcard:hover{border-color:rgba(211,32,42,.6);transform:translateY(-4px)}
+.tcard .ic{width:52px;height:52px;border-radius:50%;border:2px solid var(--rd);display:grid;place-items:center;margin-bottom:1.3rem;color:#fff}
+.tcard .ic svg{width:22px;height:22px}
+.tcard h3{font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:1.45rem;line-height:1.1;margin-bottom:.6rem}
+.tcard p{color:var(--mu);font-size:.95rem}
+.tcard p b{color:#fff;font-weight:500}
+.phone-xl{text-align:center;margin-top:3.5rem}
+.phone-xl a{font-family:var(--disp);color:#fff;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1;letter-spacing:.02em;transition:color .25s}
+.phone-xl a:hover{color:var(--rd)}
+.phone-xl p{font-family:var(--disp);color:#fff;font-size:1.05rem;margin-top:.8rem;letter-spacing:.02em}
+.phone-xl p.closed{color:var(--mu);font-size:.95rem;margin-top:.3rem}
+
+/* CARTE */
+.carte{background:var(--bk);overflow:hidden}
+.carte .d-tom{top:20px;right:-40px;width:min(360px,30vw);opacity:.95}
+.carte .d-bas{top:120px;left:-10px;width:min(170px,14vw)}
+.carte .d-piz{bottom:-20px;right:-20px;width:min(320px,26vw);opacity:.9}
+.tabs{display:inline-flex;gap:.5rem;padding:.4rem;border:1px solid var(--line);border-radius:999px;background:var(--bk2);margin-top:2rem;flex-wrap:wrap;justify-content:center}
+.tab{font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-size:.95rem;color:#cfcac3;background:transparent;border:0;border-radius:999px;padding:.7rem 1.4rem;cursor:pointer;transition:background .25s,color .25s}
+.tab:hover{color:#fff}
+.tab[aria-selected="true"]{background:var(--rd);color:#fff}
+.panel{display:none;max-width:900px;margin:0 auto;position:relative;z-index:2}
+.panel.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.cat{margin:3rem 0 1.4rem}
+.cat:first-child{margin-top:1rem}
+.cat-note{text-align:center;color:var(--mu);font-size:.92rem;font-style:italic;margin:-.4rem 0 1.2rem}
+.item{padding:.85rem 0}
+.item-row{display:flex;align-items:baseline;gap:.6rem}
+.item-name{font-family:var(--disp);color:#fff;font-size:1.3rem;letter-spacing:.01em;white-space:nowrap}
+.item-dots{flex:1;border-bottom:2px dotted rgba(211,32,42,.75);transform:translateY(-5px);min-width:24px}
+.item-price{font-family:var(--disp);color:#fff;font-size:1.5rem;white-space:nowrap}
+.item-desc{color:#cfcac3;font-size:.97rem;padding-left:1rem;margin-top:.2rem;max-width:720px}
+.tag{font-family:var(--body);font-weight:600;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--rd);border-radius:999px;padding:.25rem .6rem;margin-left:.6rem;vertical-align:middle;position:relative;top:-3px}
+.tag.gr{background:var(--gr)}
+.note{margin-top:2.6rem;border:2px solid var(--rd);border-radius:20px;padding:1.4rem 1.6rem;text-align:center;color:#cfcac3;font-size:.92rem}
+.note b{font-family:var(--disp);font-weight:400;color:#fff;letter-spacing:.02em}
+.carte-foot{font-family:var(--disp);color:#fff;text-align:center;font-size:clamp(1.15rem,2.4vw,1.5rem);max-width:700px;margin:3.4rem auto 0;line-height:1.3}
+
+/* FORMULES */
+.formules{background:var(--bk2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto}
+.fcard{border:3px solid var(--rd);border-radius:28px;padding:2.6rem 2.4rem;background:var(--bk);position:relative}
+.fcard h3{font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:1.6rem}
+.fcard .price{font-family:var(--disp);color:var(--rd);font-size:4rem;line-height:1;margin:.6rem 0 .3rem}
+.fcard .when{font-family:var(--disp);color:var(--mu);font-size:.95rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:1.4rem}
+.fcard ul{list-style:none;display:grid;gap:.6rem}
+.fcard li{padding-left:1.4rem;position:relative;color:#cfcac3}
+.fcard li::before{content:'';position:absolute;left:0;top:.65em;width:8px;height:8px;border-radius:50%;background:var(--rd)}
+.fcard li b{color:#fff;font-weight:500}
+.fcard .sub{margin-top:1.2rem;font-size:.86rem;color:var(--mu);font-style:italic}
+
+/* PHOTOS */
+.photos{background:var(--bk)}
+.p-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:280px 280px;gap:16px;grid-auto-rows:280px}
+.ph{position:relative;overflow:hidden;border-radius:22px;background:var(--bk3)}
+.ph.big{grid-row:span 2}
+.ph.wide{grid-column:span 2}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.06)}
+.ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%)}
+.ph figcaption{position:absolute;left:1.4rem;bottom:1.2rem;z-index:2;font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:1.3rem;letter-spacing:.02em}
+.ph figcaption small{display:block;font-family:var(--body);font-weight:500;font-size:.7rem;letter-spacing:.14em;color:var(--rd);margin-bottom:.2rem}
+
+/* HISTOIRE */
+.histoire{background:var(--bk2);border-top:1px solid var(--line)}
+.h-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.h-img{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--bk3);position:relative}
+.h-img img{width:100%;height:100%;object-fit:cover}
+.h-img .stamp{position:absolute;right:18px;bottom:18px;width:120px;height:120px;border-radius:50%;background:var(--rd);display:grid;place-items:center;text-align:center;font-family:var(--disp);text-transform:uppercase;color:#fff;font-size:.95rem;line-height:1.05;transform:rotate(-10deg);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.h-txt .sec-title{text-align:left}
+.h-txt p{color:#cfcac3;margin-bottom:1rem}
+blockquote{border-left:4px solid var(--rd);padding:.4rem 0 .4rem 1.4rem;margin:1.8rem 0;font-family:var(--disp);color:#fff;font-size:1.4rem;line-height:1.25}
+
+/* FLYERS */
+.flyers{background:var(--bk);overflow:hidden}
+.fl-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:860px;margin:0 auto}
+.fl{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.6);transition:transform .4s}
+.fl:nth-child(1){transform:rotate(-2deg)}.fl:nth-child(2){transform:rotate(2deg)}
+.fl:hover{transform:rotate(0) scale(1.02)}
+.fl img{width:100%;aspect-ratio:1414/2000;object-fit:cover}
+.fl-cta{text-align:center;margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* AVIS */
+.avis{background:var(--bk2);border-top:1px solid var(--line);text-align:center}
+.rating{display:inline-flex;align-items:center;gap:1.6rem;border:3px solid var(--rd);border-radius:999px;padding:1rem 2.4rem 1rem 2rem}
+.rating .n{font-family:var(--disp);color:#fff;font-size:4rem;line-height:1}
+.rating .st{color:#f5b301;font-size:1.3rem;letter-spacing:.1em;text-align:left}
+.rating .ct{font-family:var(--disp);text-transform:uppercase;color:var(--mu);font-size:.9rem;letter-spacing:.04em;text-align:left}
+.avis .btn{margin-top:2.2rem}
+
+/* CONTACT */
+.contact{background:var(--bk)}
+.c-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:stretch}
+.c-box{border:1px solid var(--line);border-radius:28px;padding:2.6rem;background:var(--bk2)}
+.c-box .sec-title{font-size:clamp(2.2rem,4vw,3rem);text-align:left}
+.hours{margin:1.4rem 0 2rem}
+.hr{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:2px dotted rgba(211,32,42,.4)}
+.hr:last-child{border-bottom:0}
+.hr .d{font-family:var(--disp);color:#fff;text-transform:uppercase;letter-spacing:.03em}
+.hr .t{color:#cfcac3;text-align:right}
+.hr .t.off{font-family:var(--disp);color:var(--rd);text-transform:uppercase}
+.hr.today{background:rgba(211,32,42,.08);margin:0 -1rem;padding:.75rem 1rem;border-radius:12px}
+.hr.today .d::after{content:' · aujourd\'hui';font-family:var(--body);font-size:.7rem;color:var(--rd);text-transform:none;letter-spacing:0}
+.c-list{display:grid;gap:.9rem;margin-bottom:2rem}
+.c-it{display:flex;align-items:center;gap:.9rem;color:#cfcac3}
+.c-it svg{width:20px;height:20px;color:var(--rd);flex-shrink:0}
+.c-it a:hover{color:#fff}
+.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:460px;background:var(--bk3)}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+
+/* FOOTER */
+footer{background:var(--bk);border-top:1px solid var(--line);padding:56px 0 40px;text-align:center}
+footer .brand{justify-content:center;font-size:2.2rem}
+footer .tri{margin:1.2rem auto}
+.ft-links{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;margin:1.4rem 0}
+.ft-links a{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);font-weight:500}
+.ft-links a:hover{color:#fff}
+.ft-copy{font-size:.8rem;color:#5f5b56}
+
+/* sticky mobile */
+.sticky-call{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;display:none;justify-content:center;align-items:center;gap:.6rem;background:var(--rd);color:#fff;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem;padding:1rem;border-radius:999px;box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.sticky-call svg{width:18px;height:18px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .nav-links,.nav-call{display:none}
+  .burger{display:block}
+  body.menu-open .nav-links{display:flex;position:fixed;inset:64px 0 auto;flex-direction:column;align-items:center;gap:1.4rem;background:rgba(0,0,0,.97);padding:2rem 0 2.4rem;border-bottom:1px solid var(--line)}
+  body.menu-open .nav-links a{font-size:1rem}
+  body.menu-open #nav{background:#000}
+  .take-grid{grid-template-columns:1fr}
+  .f-grid,.h-grid,.c-grid{grid-template-columns:1fr}
+  .h-grid{gap:40px}
+  .p-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,220px);grid-auto-rows:220px}
+  .ph.big{grid-row:span 1;grid-column:span 2}
+  .ph.wide{grid-column:span 2}
+  .sticky-call{display:flex}
+  footer{padding-bottom:110px}
+}
+@media(max-width:600px){
+  .sec{padding:80px 0}
+  #hero .d-tom{width:46vw;right:-40px;top:0}
+  #hero .d-bas{width:26vw;top:70px}
+  #hero .d-piz{width:46vw}
+  #hero .d-bas2{width:32vw}
+  .carte .d-tom,.carte .d-piz,.carte .d-bas{display:none}
+  .pill{font-size:.95rem;padding:.55em 1.3em}
+  .pill-row{gap:.8rem}
+  .item-name{font-size:1.1rem;white-space:normal}
+  .item-price{font-size:1.25rem}
+  .item-desc{padding-left:0;font-size:.9rem}
+  .tab{font-size:.8rem;padding:.6rem 1rem}
+  .fl-grid{grid-template-columns:1fr;max-width:380px}
+  .p-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:240px}
+  .ph.big,.ph.wide{grid-column:auto}
+  .c-box{padding:1.8rem 1.4rem}
+  .rating{padding:.9rem 1.6rem;gap:1rem}
+  .rating .n{font-size:3rem}
+  .fcard{padding:2rem 1.6rem}
+}
+
+/* === Mobile : textes réduits (ajout 2026-10-06) === */
+@media(max-width:600px){
+  .h-title{font-size:clamp(2.5rem,11vw,3.4rem)}
+  .h-tag{font-size:.95rem;letter-spacing:.12em}
+  .h-info{font-size:1rem}
+  .h-addr{font-size:.92rem}
+  .brand{font-size:1.3rem}
+  .sec-title{font-size:clamp(1.9rem,7.5vw,2.7rem)}
+  .c-box .sec-title{font-size:clamp(1.8rem,7vw,2.4rem)}
+  .sec-sub{font-size:1.12rem}
+  .eyebrow{font-size:.82rem}
+  .lead{font-size:.95rem}
+  .phone-xl a{font-size:clamp(2rem,10vw,3rem)}
+  .phone-xl p{font-size:.95rem}
+  .fcard h3{font-size:1.35rem}
+  .fcard .price{font-size:2.6rem}
+  .item-name{font-size:1rem}
+  .item-price{font-size:1.1rem}
+  .item-desc{font-size:.85rem}
+  .tcard h3{font-size:1.25rem}
+  .band span{font-size:.92rem}
+  blockquote{font-size:1.12rem}
+  .rating .n{font-size:2.4rem}
+  .rating .st{font-size:1.1rem}
+  .ph figcaption{font-size:1.1rem}
+  footer .brand{font-size:1.65rem}
+  .btn{font-size:.92rem}
+  .sticky-call{font-size:.98rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Navigation principale">
+  <div class="wrap nav-in">
+    <a class="brand" href="#hero"><img src="assets/images/logo-flyer.webp" alt="">Chez Fredo</a>
+    <div class="nav-links">
+      <a href="#emporter">À emporter</a>
+      <a href="#carte">La carte</a>
+      <a href="#formules">Formules</a>
+      <a href="#photos">Photos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-call" href="tel:+33559699999">05 59 69 99 99</a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <img class="deco d-tom" src="assets/images/deco-tomates.webp" alt="">
+  <img class="deco d-bas" src="assets/images/deco-basilic.webp" alt="">
+  <img class="deco d-piz" src="assets/images/deco-pizza.webp" alt="">
+  <img class="deco d-bas2" src="assets/images/deco-basilic-bas.webp" alt="">
+  <div class="hero-c">
+    <h1 class="h-title disp">Chez Fredo</h1>
+    <p class="h-tag">La dolce vita à votre table</p>
+    <div class="tri"><i></i><i></i><i></i></div>
+    <img class="h-logo" src="assets/images/logo-flyer.webp" alt="Logo Chez Fredo : toque de chef aux couleurs de l'Italie">
+    <div class="pill-row"><span class="pill">Pizzas à emporter</span></div>
+    <p class="h-info"><span>Dès midi</span><span class="dot">•</span><span>Soir dès 18h</span></p>
+    <p class="h-addr">19 Rue Gambetta – 64120 St Palais</p>
+    <div class="h-ctas">
+      <a class="btn btn-rd" href="tel:+33559699999"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Commander</a>
+      <a class="btn btn-ln" href="#carte">Voir la carte</a>
+    </div>
+  </div>
+</section>
+
+<!-- BANDEAU -->
+<div class="band" aria-hidden="true">
+  <div class="band-track">
+    <span>Pizzas 31 cm</span><span>Sur place ou à emporter</span><span>Pâtes maison</span><span>Produits italiens</span><span>Formule du midi 16,50 €</span><span>Menu Bambino 10 €</span><span>4,3 ★ sur Google</span>
+    <span>Pizzas 31 cm</span><span>Sur place ou à emporter</span><span>Pâtes maison</span><span>Produits italiens</span><span>Formule du midi 16,50 €</span><span>Menu Bambino 10 €</span><span>4,3 ★ sur Google</span>
+  </div>
+</div>
+
+<!-- À EMPORTER -->
+<section id="emporter" class="sec take">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Simple &amp; rapide</p>
+      <h2 class="sec-title">À emporter</h2>
+      <div class="tri sm"><i></i><i></i><i></i></div>
+    </div>
+    <div class="take-grid">
+      <article class="tcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>1. Appelez</h3>
+        <p>Un coup de fil au <b>05 59 69 99 99</b>, choisissez vos pizzas et votre heure de passage.</p>
+      </article>
+      <article class="tcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 3 8 8 8 13a8 8 0 0 1-16 0c0-5 4-10 8-13z"/><path d="M12 22a4 4 0 0 1-4-4c0-2.5 2-4.5 4-6 2 1.5 4 3.5 4 6a4 4 0 0 1-4 4z"/></svg></div>
+        <h3>2. Fredo enfourne</h3>
+        <p>Pâte, sauce tomate et garnitures préparées <b>à la commande</b>. Pizzas de 31 cm.</p>
+      </article>
+      <article class="tcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-6.5-8-13a8 8 0 0 1 16 0c0 6.5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg></div>
+        <h3>3. Récupérez</h3>
+        <p><b>19 Rue Gambetta</b>, au cœur de Saint-Palais. Dès midi, et le soir dès 18h.</p>
+      </article>
+    </div>
+    <div class="phone-xl rv">
+      <a href="tel:+33559699999">05 59 69 99 99</a>
+      <p>Mer – Sam • 12h–14h &amp; 19h–21h30 • Dim soir 19h–21h30</p>
+      <p class="closed">Fermé lundi &amp; mardi</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARTE -->
+<section id="carte" class="sec carte">
+  <img class="deco d-tom" src="assets/images/deco-tomates.webp" alt="">
+  <img class="deco d-bas" src="assets/images/deco-basilic.webp" alt="">
+  <img class="deco d-piz" src="assets/images/deco-pizza.webp" alt="">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="sec-title" style="font-size:clamp(3rem,8vw,5.5rem)">Chez Fredo</h2>
+      <p class="sec-sub" style="font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1.2rem">La carte</p>
+      <div class="tri"><i></i><i></i><i></i></div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="piz">Pizzas</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="pasta">Antipasti &amp; Pâtes</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="dolci">Desserts &amp; Glaces</button>
+      </div>
+    </div>
+
+    <!-- PIZZAS -->
+    <div class="panel on" id="tp-piz" role="tabpanel">
+      <div class="cat pill-row thin"><span class="pill">Base tomate</span></div>
+      <div class="item"><div class="item-row"><span class="item-name">Margarita</span><span class="item-dots"></span><span class="item-price">10 €</span></div><p class="item-desc">Tomate, Mozzarella, Basilic, Huile extra vierge</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Napolitaine</span><span class="item-dots"></span><span class="item-price">11,5 €</span></div><p class="item-desc">Tomate, Mozzarella, Anchois, Câpres, Origan, Persil</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Regina</span><span class="item-dots"></span><span class="item-price">12 €</span></div><p class="item-desc">Tomate, Mozzarella, Champignons, Jambon blanc, Origan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">4 Saisons</span><span class="item-dots"></span><span class="item-price">12 €</span></div><p class="item-desc">Tomate, Mozzarella, Artichauts, Aubergines, Champignons, Origan, Persil</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Calzone</span><span class="item-dots"></span><span class="item-price">12 €</span></div><p class="item-desc">Tomate, Mozzarella, Champignons, Jambon blanc, Œuf, Origan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Thon</span><span class="item-dots"></span><span class="item-price">12,5 €</span></div><p class="item-desc">Tomate, Mozzarella, Thon, Oignons, Câpres, Origan, Persil, Citron</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Del – Pizzaiolo</span><span class="item-dots"></span><span class="item-price">12,5 €</span></div><p class="item-desc">Tomate, Mozzarella, Champignons, Jambon blanc, Œuf, Crème fraîche liquide, Origan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">La Hannibal</span><span class="item-dots"></span><span class="item-price">14 €</span></div><p class="item-desc">Tomate, Mozzarella, Oignons rouges, Lardons, Œuf, Viande hachée, Origan, Persil</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Mélito<span class="tag">Piquante</span></span><span class="item-dots"></span><span class="item-price">13 €</span></div><p class="item-desc">Tomate, Mozzarella, Saucisse italienne, Saucisse piquante au choix : N’Duja très piquante ou Spianata moins piquante, Artichauts, Origan, Champignons, Persil</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Calabraise<span class="tag">Piquante</span></span><span class="item-dots"></span><span class="item-price">13 €</span></div><p class="item-desc">Tomate, Mozzarella, Saucisse italienne, Saucisse piquante au choix : N’Duja très piquante ou Spianata moins piquante, Oignons, Origan, Persil</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">La Fredo<span class="tag gr">Signature</span></span><span class="item-dots"></span><span class="item-price">15 €</span></div><p class="item-desc">Tomate, Mozzarella, Jambon cru ou blanc, Roquette, Burrata</p></div>
+
+      <div class="cat pill-row thin"><span class="pill">Base crème</span></div>
+      <div class="item"><div class="item-row"><span class="item-name">Chèvre Miel</span><span class="item-dots"></span><span class="item-price">12 €</span></div><p class="item-desc">Crème, Mozzarella, Chèvre, Miel</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Montagnarde</span><span class="item-dots"></span><span class="item-price">13 €</span></div><p class="item-desc">Crème, Lardons, Pommes de terre, Oignons, Raclette, Origan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">4 Fromages</span><span class="item-dots"></span><span class="item-price">13,5 €</span></div><p class="item-desc">Crème, Mozzarella, Raclette, Chèvre, Gorgonzola, Grana Padano, Origan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">La Ventrèche</span><span class="item-dots"></span><span class="item-price">14 €</span></div><p class="item-desc">Crème, Mozzarella, Ventrèche, Pommes de terre, Oignons, Œuf, Origan, Persil</p></div>
+
+      <div class="note"><b>Pizzas 31 cm</b> · Suppléments 1 € ou 2 € par produit ajouté · <b>Burrata</b> : boule de mozzarella crémeuse<br><span style="color:var(--rd)">Supplément ananas : 65 € 😄</span></div>
+      <p class="carte-foot">Nos pâtes sont aussi à découvrir sur notre carte, sur place ou à emporter.</p>
+    </div>
+
+    <!-- PÂTES -->
+    <div class="panel" id="tp-pasta" role="tabpanel">
+      <div class="cat pill-row thin"><span class="pill">Antipasti</span></div>
+      <div class="item"><div class="item-row"><span class="item-name">Planche de charcuterie italienne</span><span class="item-dots"></span><span class="item-price">14 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Stracciatella &amp; Focaccia</span><span class="item-dots"></span><span class="item-price">8 €</span></div><p class="item-desc">Fromage crémeux assaisonné de son pesto maison</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Salade Italienne</span><span class="item-dots"></span><span class="item-price">13,5 €</span></div><p class="item-desc">Burrata, Salade verte, Artichauts, Tomates séchées, Jambon cru, Oignons rouges</p></div>
+
+      <div class="cat pill-row thin"><span class="pill">Pasta</span></div>
+      <div class="item"><div class="item-row"><span class="item-name">Arrabiata<span class="tag">Piquante</span></span><span class="item-dots"></span><span class="item-price">13 €</span></div><p class="item-desc">Sauce tomate, Oignons, Ail, Persil, Saucisse piquante, Parmesan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Bolognaise</span><span class="item-dots"></span><span class="item-price">13 €</span></div><p class="item-desc">Sauce tomate, Viande hachée, Parmesan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Aubergines</span><span class="item-dots"></span><span class="item-price">13 €</span></div><p class="item-desc">Sauce tomate, Tomates séchées, Aubergines grillées, Parmesan</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Carbonara</span><span class="item-dots"></span><span class="item-price">14,8 €</span></div><p class="item-desc">Beurre, Ail, Œuf, Lardons, Crème fraîche</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Pesto maison &amp; Burrata<span class="tag gr">Maison</span></span><span class="item-dots"></span><span class="item-price">15 €</span></div><p class="item-desc">Pesto fait maison, Burrata crémeuse</p></div>
+
+      <div class="cat pill-row thin"><span class="pill">Escalope de veau</span></div>
+      <p class="cat-note">Escalope de veau dans la noix, chapelure maison — servie avec pâtes</p>
+      <div class="item"><div class="item-row"><span class="item-name">À la Milanaise</span><span class="item-dots"></span><span class="item-price">20 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Gratinée au four à pizza</span><span class="item-dots"></span><span class="item-price">22 €</span></div><p class="item-desc">Tomate, Jambon blanc, Mozzarella</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">À la Parmigiana<span class="tag gr">Signature</span></span><span class="item-dots"></span><span class="item-price">24 €</span></div><p class="item-desc">Tomate, Jambon blanc, Aubergine, Mozzarella — gratinée au four à pizza</p></div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="panel" id="tp-dolci" role="tabpanel">
+      <div class="cat pill-row thin"><span class="pill">Dolci</span></div>
+      <div class="item"><div class="item-row"><span class="item-name">Panna Cotta</span><span class="item-dots"></span><span class="item-price">6,5 €</span></div><p class="item-desc">Fruits rouges ou caramel au choix</p></div>
+      <div class="item"><div class="item-row"><span class="item-name">Crème brûlée vanille</span><span class="item-dots"></span><span class="item-price">6,5 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Moelleux au chocolat</span><span class="item-dots"></span><span class="item-price">6,5 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Tiramisu café<span class="tag gr">Maison</span></span><span class="item-dots"></span><span class="item-price">7,5 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Pizza Nutella</span><span class="item-dots"></span><span class="item-price">8 €</span></div></div>
+
+      <div class="cat pill-row thin"><span class="pill">Glaces &amp; sorbets</span></div>
+      <p class="cat-note">Glaces des Alpes · Maître Artisan Glacier</p>
+      <div class="item"><div class="item-row"><span class="item-name">1 boule</span><span class="item-dots"></span><span class="item-price">2,5 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">2 boules</span><span class="item-dots"></span><span class="item-price">4,5 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">3 boules</span><span class="item-dots"></span><span class="item-price">6,5 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Supplément chantilly</span><span class="item-dots"></span><span class="item-price">1 €</span></div></div>
+      <div class="note"><b>Glaces</b> : Yaourt, Vanille, Caramel beurre salé, Stracciatella, Rhum raisin, Pistache, Noisette, Chocolat, Café, Amarena, Menthe<br><b>Sorbets</b> : Don Papa, Citron, Pêche de vigne, Mangue, Framboise, Fraise</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULES -->
+<section id="formules" class="sec formules">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Nos offres</p>
+      <h2 class="sec-title">Formules</h2>
+      <div class="tri sm"><i></i><i></i><i></i></div>
+    </div>
+    <div class="f-grid">
+      <article class="fcard rv">
+        <h3>Formule du midi</h3>
+        <div class="price">16,50 €</div>
+        <p class="when">Du mercredi au vendredi · midi</p>
+        <ul>
+          <li><b>1 plat du jour</b> — pizza ou pâtes</li>
+          <li><b>1 dessert du jour</b></li>
+        </ul>
+        <p class="sub">Supplément 3 € pour la pizza Fredo et les pâtes au pesto</p>
+      </article>
+      <article class="fcard rv">
+        <h3>Menu Bambino</h3>
+        <div class="price">10 €</div>
+        <p class="when">Jusqu'à 10 ans</p>
+        <ul>
+          <li><b>1 plat</b> — pizza jambon mozzarella ou pâtes bolognaise</li>
+          <li><b>1 dessert</b> — boule de glace au choix</li>
+          <li><b>1 boisson</b> — sirop, Coca, limonade ou jus de fruit</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos" class="sec photos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Fait maison</p>
+      <h2 class="sec-title">En images</h2>
+      <div class="tri sm"><i></i><i></i><i></i></div>
+    </div>
+    <div class="p-grid rv">
+      <figure class="ph big"><img src="assets/images/chez-fredo-signature.jpg" alt="Pizza signature Chez Fredo" loading="lazy"><figcaption><small>Signature</small>La Fredo</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-pates.jpg" alt="Assiette de pâtes Chez Fredo" loading="lazy"><figcaption><small>Pasta</small>Les pâtes</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-pizza-aperitivo.jpg" alt="Pizza et apéritif Chez Fredo" loading="lazy"><figcaption><small>Aperitivo</small>À partager</figcaption></figure>
+      <figure class="ph wide"><img src="assets/images/chez-fredo-salle.jpg" alt="Salle du restaurant Chez Fredo" loading="lazy"><figcaption><small>Sur place</small>La salle</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-equipe.jpg" alt="L'équipe Chez Fredo" loading="lazy"><figcaption><small>Famille</small>L'équipe</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-pizzaiolo.jpg" alt="Le pizzaiolo prépare une pizza" loading="lazy"><figcaption><small>Savoir-faire</small>Le pizzaiolo</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-pate.jpg" alt="Mains qui travaillent la pâte" loading="lazy"><figcaption><small>Fait maison</small>La pâte</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-emporter.jpg" alt="Pizza à emporter sortie du four" loading="lazy"><figcaption><small>À emporter</small>Prête à partir</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-apero.jpg" alt="Boissons et bouchées à l’apéritif" loading="lazy"><figcaption><small>Aperitivo</small>L'apéro</figcaption></figure>
+      <figure class="ph"><img src="assets/images/chez-fredo-dessert.jpg" alt="Crème brûlée Chez Fredo" loading="lazy"><figcaption><small>Dolce</small>Le dessert</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section id="histoire" class="sec histoire">
+  <div class="wrap h-grid">
+    <div class="h-img rv">
+      <img src="assets/images/famille.png" alt="Famille Chez Fredo" loading="lazy">
+      <div class="stamp">Pizzas<br>31 cm</div>
+    </div>
+    <div class="h-txt rv">
+      <p class="eyebrow">Une affaire de famille</p>
+      <h2 class="sec-title">La dolce vita<br>à Saint-Palais</h2>
+      <p>Chez Fredo, c'est avant tout une histoire de famille. Fredo au four à pizza, la gérante à l'accueil, et la Mama en cuisine pour les plats d'inspiration calabraise, préparés avec des produits italiens soigneusement sélectionnés.</p>
+      <blockquote>Chaque pizza sort du four comme une lettre d'amour adressée à la Calabre.</blockquote>
+      <p>Sur place ou à emporter, au cœur de Saint-Palais.</p>
+      <a class="btn btn-ln" href="#contact" style="margin-top:1rem">Nous rendre visite</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLYERS -->
+<section class="sec flyers">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">À garder sous la main</p>
+      <h2 class="sec-title">Pizzas, bières et plaisir à partager</h2>
+      <div class="tri sm"><i></i><i></i><i></i></div>
+    </div>
+    <div class="fl-grid rv">
+      <a class="fl" rel="noopener"><img src="assets/images/pizza_jambon.png" alt="Pizza Chez Fredo" loading="lazy"></a>
+      <a class="fl" rel="noopener"><img src="assets/images/biere.png" alt="Pizza Chez Fredo" loading="lazy"></a>
+    </div>
+    <div class="fl-cta rv">
+      <a class="btn btn-ln" href="assets/images/flyer-carte.webp" download>Télécharger la carte</a>
+      <a class="btn btn-rd" href="tel:+33559699999">Commander</a>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis" class="sec avis">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:2.4rem">
+      <p class="eyebrow">Ils en parlent</p>
+      <h2 class="sec-title">Avis clients</h2>
+      <div class="tri sm"><i></i><i></i><i></i></div>
+    </div>
+    <div class="rv">
+      <div class="rating">
+        <span class="n">4,3</span>
+        <div><div class="st">★★★★☆</div><div class="ct">188 avis Google</div></div>
+      </div>
+      <br>
+      <a class="btn btn-rd" href="https://www.google.com/maps/search/Chez+Fredo+19+Rue+Gambetta+Saint-Palais" target="_blank" rel="noopener noreferrer">Lire les avis sur Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec contact">
+  <div class="wrap c-grid">
+    <div class="c-box rv">
+      <p class="eyebrow">Infos pratiques</p>
+      <h2 class="sec-title">Horaires &amp; accès</h2>
+      <div class="hours" id="hours">
+        <div class="hr" data-d="1"><span class="d">Lundi</span><span class="t off">Fermé</span></div>
+        <div class="hr" data-d="2"><span class="d">Mardi</span><span class="t off">Fermé</span></div>
+        <div class="hr" data-d="3"><span class="d">Mercredi</span><span class="t">12h–14h · 19h–21h30</span></div>
+        <div class="hr" data-d="4"><span class="d">Jeudi</span><span class="t">12h–14h · 19h–21h30</span></div>
+        <div class="hr" data-d="5"><span class="d">Vendredi</span><span class="t">12h–14h · 19h–21h30</span></div>
+        <div class="hr" data-d="6"><span class="d">Samedi</span><span class="t">12h–14h · 19h–21h30</span></div>
+        <div class="hr" data-d="0"><span class="d">Dimanche</span><span class="t">Soir · 19h–21h30</span></div>
+      </div>
+      <div class="c-list">
+        <div class="c-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-6.5-8-13a8 8 0 0 1 16 0c0 6.5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg><span>19 Rue Gambetta, 64120 Saint-Palais</span></div>
+        <div class="c-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+33559699999">05 59 69 99 99</a></div>
+        <div class="c-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:desboismarguerite@gmail.com">desboismarguerite@gmail.com</a></div>
+      </div>
+      <a class="btn btn-rd" href="tel:+33559699999">Appeler Chez Fredo</a>
+    </div>
+    <div class="map rv">
+      <iframe src="https://maps.google.com/maps?q=19+Rue+Gambetta,+64120+Saint-Palais,+France&output=embed&hl=fr&z=16" loading="lazy" title="Chez Fredo – 19 Rue Gambetta, Saint-Palais" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#hero">Chez Fredo</a>
+    <div class="tri sm"><i></i><i></i><i></i></div>
+    <div class="ft-links">
+      <a href="#emporter">À emporter</a><a href="#carte">La carte</a><a href="#formules">Formules</a><a href="#photos">Photos</a><a href="#contact">Contact</a>
+    </div>
+    <p class="ft-copy">© 2026 Chez Fredo · 19 Rue Gambetta, 64120 Saint-Palais · chezfredopizza.com</p>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+33559699999"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Commander · 05 59 69 99 99</a>
+
+<script>
+(function(){
+  // nav
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('solid',window.scrollY>60)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // burger
+  var burger=document.querySelector('.burger');
+  burger.addEventListener('click',function(){
+    var open=document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded',open);
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded',false);});
+  });
+
+  // onglets carte
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.setAttribute('aria-selected','false')});
+      t.setAttribute('aria-selected','true');
+      document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on')});
+      document.getElementById('tp-'+t.dataset.tab).classList.add('on');
+    });
+  });
+
+  // jour courant dans les horaires
+  var today=new Date().getDay();
+  var row=document.querySelector('.hr[data-d="'+today+'"]');
+  if(row) row.classList.add('today');
+
+  // apparition au scroll
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')});}
+
+  // image manquante : on masque proprement
+  document.querySelectorAll('.ph img,.h-img img').forEach(function(img){
+    img.addEventListener('error',function(){img.style.opacity=0});
+  });
+})();
+</script>
+</body>
+</html>
